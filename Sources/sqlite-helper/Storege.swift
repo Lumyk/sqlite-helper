@@ -35,6 +35,11 @@ public class Storege: MapperStorage {
     let connection: Connection
     let types: [Storable.Type]
     
+    public init(connection: Connection, types: [Storable.Type]) {
+        self.connection = connection
+        self.types = types
+    }
+    
     public init(connection: Connection, types: Storable.Type...) {
         self.connection = connection
         self.types = types
