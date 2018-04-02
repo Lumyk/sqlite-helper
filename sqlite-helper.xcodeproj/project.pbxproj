@@ -1,0 +1,980 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"sqlite-helper::sqlite-helperPackageTests::ProductTarget" /* sqlite-helperPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_137 /* Build configuration list for PBXAggregateTarget "sqlite-helperPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_140 /* PBXTargetDependency */,
+			);
+			name = "sqlite-helperPackageTests";
+			productName = "sqlite-helperPackageTests";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		151D86D7206EA47200BF99CC /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D86D6206EA47200BF99CC /* Storable.swift */; };
+		OBJ_105 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Mappable.swift */; };
+		OBJ_106 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Mapper.swift */; };
+		OBJ_107 /* MapperStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* MapperStorage.swift */; };
+		OBJ_108 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* MappingError.swift */; };
+		OBJ_109 /* TransformTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* TransformTypes.swift */; };
+		OBJ_115 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Blob.swift */; };
+		OBJ_116 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Connection.swift */; };
+		OBJ_117 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Errors.swift */; };
+		OBJ_118 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Statement.swift */; };
+		OBJ_119 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Value.swift */; };
+		OBJ_120 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Cipher.swift */; };
+		OBJ_121 /* RTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* RTree.swift */; };
+		OBJ_122 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* Foundation.swift */; };
+		OBJ_123 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Helpers.swift */; };
+		OBJ_124 /* AggregateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* AggregateFunctions.swift */; };
+		OBJ_125 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Coding.swift */; };
+		OBJ_126 /* Collation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Collation.swift */; };
+		OBJ_127 /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* CoreFunctions.swift */; };
+		OBJ_128 /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* CustomFunctions.swift */; };
+		OBJ_129 /* DateAndTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* DateAndTimeFunctions.swift */; };
+		OBJ_130 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* Expression.swift */; };
+		OBJ_131 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* Operators.swift */; };
+		OBJ_132 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* Query.swift */; };
+		OBJ_133 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Schema.swift */; };
+		OBJ_134 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Setter.swift */; };
+		OBJ_60 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_66 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Package.swift */; };
+		OBJ_72 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Package.swift */; };
+		OBJ_78 /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Machine.swift */; };
+		OBJ_79 /* sqlite_helperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* sqlite_helperTests.swift */; };
+		OBJ_81 /* sqlite_helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "sqlite-helper::sqlite-helper::Product" /* sqlite_helper.framework */; };
+		OBJ_82 /* apollo_mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "apollo-mapper::apollo-mapper::Product" /* apollo_mapper.framework */; };
+		OBJ_83 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SQLite.swift::SQLite::Product" /* SQLite.framework */; };
+		OBJ_94 /* Storege.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Storege.swift */; };
+		OBJ_97 /* apollo_mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "apollo-mapper::apollo-mapper::Product" /* apollo_mapper.framework */; };
+		OBJ_98 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SQLite.swift::SQLite::Product" /* SQLite.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		151D86D0206E9A9900BF99CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "apollo-mapper::apollo-mapper";
+			remoteInfo = "apollo-mapper";
+		};
+		151D86D1206E9A9900BF99CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SQLite.swift::SQLite";
+			remoteInfo = SQLite;
+		};
+		151D86D2206E9A9900BF99CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "sqlite-helper::sqlite-helper";
+			remoteInfo = "sqlite-helper";
+		};
+		151D86D3206E9A9900BF99CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "apollo-mapper::apollo-mapper";
+			remoteInfo = "apollo-mapper";
+		};
+		151D86D4206E9A9900BF99CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SQLite.swift::SQLite";
+			remoteInfo = SQLite;
+		};
+		151D86D5206E9A9A00BF99CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "sqlite-helper::sqlite-helperTests";
+			remoteInfo = "sqlite-helperTests";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		151D86D6206EA47200BF99CC /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		OBJ_13 /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
+		OBJ_14 /* sqlite_helperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqlite_helperTests.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		OBJ_20 /* MapperStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperStorage.swift; sourceTree = "<group>"; };
+		OBJ_21 /* MappingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
+		OBJ_22 /* TransformTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTypes.swift; sourceTree = "<group>"; };
+		OBJ_23 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/lumyk/ios/sqlite-helper/.build/checkouts/apollo-mapper.git-8999720018367238913/Package.swift"; sourceTree = "<group>"; };
+		OBJ_27 /* Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		OBJ_29 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		OBJ_30 /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
+		OBJ_31 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Cipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cipher.swift; sourceTree = "<group>"; };
+		OBJ_34 /* RTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTree.swift; sourceTree = "<group>"; };
+		OBJ_35 /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		OBJ_38 /* AggregateFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregateFunctions.swift; sourceTree = "<group>"; };
+		OBJ_39 /* Coding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coding.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Collation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collation.swift; sourceTree = "<group>"; };
+		OBJ_41 /* CoreFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFunctions.swift; sourceTree = "<group>"; };
+		OBJ_42 /* CustomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFunctions.swift; sourceTree = "<group>"; };
+		OBJ_43 /* DateAndTimeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeFunctions.swift; sourceTree = "<group>"; };
+		OBJ_44 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		OBJ_45 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		OBJ_46 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		OBJ_47 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		OBJ_48 /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
+		OBJ_49 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/lumyk/ios/sqlite-helper/.build/checkouts/SQLite.swift.git-8114070988165065241/Package.swift"; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Storege.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storege.swift; sourceTree = "<group>"; };
+		"SQLite.swift::SQLite::Product" /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"apollo-mapper::apollo-mapper::Product" /* apollo_mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = apollo_mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"sqlite-helper::sqlite-helper::Product" /* sqlite_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sqlite_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"sqlite-helper::sqlite-helperTests::Product" /* sqlite_helperTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = sqlite_helperTests.xctest; path = "sqlite-helperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_110 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_135 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_81 /* sqlite_helper.framework in Frameworks */,
+				OBJ_82 /* apollo_mapper.framework in Frameworks */,
+				OBJ_83 /* SQLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_97 /* apollo_mapper.framework in Frameworks */,
+				OBJ_98 /* SQLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_11 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* sqlite-helperTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_12 /* sqlite-helperTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_13 /* Machine.swift */,
+				OBJ_14 /* sqlite_helperTests.swift */,
+			);
+			name = "sqlite-helperTests";
+			path = "Tests/sqlite-helperTests";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_15 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* apollo-mapper 0.0.4 */,
+				OBJ_24 /* SQLite.swift 0.11.5 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_16 /* apollo-mapper 0.0.4 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* apollo-mapper */,
+				OBJ_23 /* Package.swift */,
+			);
+			name = "apollo-mapper 0.0.4";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_17 /* apollo-mapper */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_18 /* Mappable.swift */,
+				OBJ_19 /* Mapper.swift */,
+				OBJ_20 /* MapperStorage.swift */,
+				OBJ_21 /* MappingError.swift */,
+				OBJ_22 /* TransformTypes.swift */,
+			);
+			name = "apollo-mapper";
+			path = ".build/checkouts/apollo-mapper.git-8999720018367238913/Sources/apollo-mapper";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_24 /* SQLite.swift 0.11.5 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_25 /* SQLite */,
+				OBJ_49 /* Package.swift */,
+			);
+			name = "SQLite.swift 0.11.5";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_25 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_26 /* Core */,
+				OBJ_32 /* Extensions */,
+				OBJ_35 /* Foundation.swift */,
+				OBJ_36 /* Helpers.swift */,
+				OBJ_37 /* Typed */,
+			);
+			name = SQLite;
+			path = ".build/checkouts/SQLite.swift.git-8114070988165065241/Sources/SQLite";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_26 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_27 /* Blob.swift */,
+				OBJ_28 /* Connection.swift */,
+				OBJ_29 /* Errors.swift */,
+				OBJ_30 /* Statement.swift */,
+				OBJ_31 /* Value.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		OBJ_32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_33 /* Cipher.swift */,
+				OBJ_34 /* RTree.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		OBJ_37 /* Typed */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_38 /* AggregateFunctions.swift */,
+				OBJ_39 /* Coding.swift */,
+				OBJ_40 /* Collation.swift */,
+				OBJ_41 /* CoreFunctions.swift */,
+				OBJ_42 /* CustomFunctions.swift */,
+				OBJ_43 /* DateAndTimeFunctions.swift */,
+				OBJ_44 /* Expression.swift */,
+				OBJ_45 /* Operators.swift */,
+				OBJ_46 /* Query.swift */,
+				OBJ_47 /* Schema.swift */,
+				OBJ_48 /* Setter.swift */,
+			);
+			path = Typed;
+			sourceTree = "<group>";
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_11 /* Tests */,
+				OBJ_15 /* Dependencies */,
+				OBJ_50 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"sqlite-helper::sqlite-helperTests::Product" /* sqlite_helperTests.xctest */,
+				"sqlite-helper::sqlite-helper::Product" /* sqlite_helper.framework */,
+				"apollo-mapper::apollo-mapper::Product" /* apollo_mapper.framework */,
+				"SQLite.swift::SQLite::Product" /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* sqlite-helper */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* sqlite-helper */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Storege.swift */,
+				151D86D6206EA47200BF99CC /* Storable.swift */,
+			);
+			name = "sqlite-helper";
+			path = "Sources/sqlite-helper";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"SQLite.swift::SQLite" /* SQLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_111 /* Build configuration list for PBXNativeTarget "SQLite" */;
+			buildPhases = (
+				OBJ_114 /* Sources */,
+				OBJ_135 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQLite;
+			productName = SQLite;
+			productReference = "SQLite.swift::SQLite::Product" /* SQLite.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"SQLite.swift::SwiftPMPackageDescription" /* SQLite.swiftPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_68 /* Build configuration list for PBXNativeTarget "SQLite.swiftPackageDescription" */;
+			buildPhases = (
+				OBJ_71 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQLite.swiftPackageDescription;
+			productName = SQLite.swiftPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"apollo-mapper::SwiftPMPackageDescription" /* apollo-mapperPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_62 /* Build configuration list for PBXNativeTarget "apollo-mapperPackageDescription" */;
+			buildPhases = (
+				OBJ_65 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "apollo-mapperPackageDescription";
+			productName = "apollo-mapperPackageDescription";
+			productType = "com.apple.product-type.framework";
+		};
+		"apollo-mapper::apollo-mapper" /* apollo-mapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_101 /* Build configuration list for PBXNativeTarget "apollo-mapper" */;
+			buildPhases = (
+				OBJ_104 /* Sources */,
+				OBJ_110 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "apollo-mapper";
+			productName = apollo_mapper;
+			productReference = "apollo-mapper::apollo-mapper::Product" /* apollo_mapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"sqlite-helper::SwiftPMPackageDescription" /* sqlite-helperPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_56 /* Build configuration list for PBXNativeTarget "sqlite-helperPackageDescription" */;
+			buildPhases = (
+				OBJ_59 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sqlite-helperPackageDescription";
+			productName = "sqlite-helperPackageDescription";
+			productType = "com.apple.product-type.framework";
+		};
+		"sqlite-helper::sqlite-helper" /* sqlite-helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_90 /* Build configuration list for PBXNativeTarget "sqlite-helper" */;
+			buildPhases = (
+				OBJ_93 /* Sources */,
+				OBJ_96 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_99 /* PBXTargetDependency */,
+				OBJ_100 /* PBXTargetDependency */,
+			);
+			name = "sqlite-helper";
+			productName = sqlite_helper;
+			productReference = "sqlite-helper::sqlite-helper::Product" /* sqlite_helper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"sqlite-helper::sqlite-helperTests" /* sqlite-helperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_74 /* Build configuration list for PBXNativeTarget "sqlite-helperTests" */;
+			buildPhases = (
+				OBJ_77 /* Sources */,
+				OBJ_80 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_84 /* PBXTargetDependency */,
+				OBJ_86 /* PBXTargetDependency */,
+				OBJ_88 /* PBXTargetDependency */,
+			);
+			name = "sqlite-helperTests";
+			productName = sqlite_helperTests;
+			productReference = "sqlite-helper::sqlite-helperTests::Product" /* sqlite_helperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "sqlite-helper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"sqlite-helper::SwiftPMPackageDescription" /* sqlite-helperPackageDescription */,
+				"apollo-mapper::SwiftPMPackageDescription" /* apollo-mapperPackageDescription */,
+				"SQLite.swift::SwiftPMPackageDescription" /* SQLite.swiftPackageDescription */,
+				"sqlite-helper::sqlite-helperTests" /* sqlite-helperTests */,
+				"sqlite-helper::sqlite-helper" /* sqlite-helper */,
+				"apollo-mapper::apollo-mapper" /* apollo-mapper */,
+				"SQLite.swift::SQLite" /* SQLite */,
+				"sqlite-helper::sqlite-helperPackageTests::ProductTarget" /* sqlite-helperPackageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_104 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_105 /* Mappable.swift in Sources */,
+				OBJ_106 /* Mapper.swift in Sources */,
+				OBJ_107 /* MapperStorage.swift in Sources */,
+				OBJ_108 /* MappingError.swift in Sources */,
+				OBJ_109 /* TransformTypes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_114 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_115 /* Blob.swift in Sources */,
+				OBJ_116 /* Connection.swift in Sources */,
+				OBJ_117 /* Errors.swift in Sources */,
+				OBJ_118 /* Statement.swift in Sources */,
+				OBJ_119 /* Value.swift in Sources */,
+				OBJ_120 /* Cipher.swift in Sources */,
+				OBJ_121 /* RTree.swift in Sources */,
+				OBJ_122 /* Foundation.swift in Sources */,
+				OBJ_123 /* Helpers.swift in Sources */,
+				OBJ_124 /* AggregateFunctions.swift in Sources */,
+				OBJ_125 /* Coding.swift in Sources */,
+				OBJ_126 /* Collation.swift in Sources */,
+				OBJ_127 /* CoreFunctions.swift in Sources */,
+				OBJ_128 /* CustomFunctions.swift in Sources */,
+				OBJ_129 /* DateAndTimeFunctions.swift in Sources */,
+				OBJ_130 /* Expression.swift in Sources */,
+				OBJ_131 /* Operators.swift in Sources */,
+				OBJ_132 /* Query.swift in Sources */,
+				OBJ_133 /* Schema.swift in Sources */,
+				OBJ_134 /* Setter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_60 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_66 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_72 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_78 /* Machine.swift in Sources */,
+				OBJ_79 /* sqlite_helperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				151D86D7206EA47200BF99CC /* Storable.swift in Sources */,
+				OBJ_94 /* Storege.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SQLite.swift::SQLite" /* SQLite */;
+			targetProxy = 151D86D1206E9A9900BF99CC /* PBXContainerItemProxy */;
+		};
+		OBJ_140 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "sqlite-helper::sqlite-helperTests" /* sqlite-helperTests */;
+			targetProxy = 151D86D5206E9A9A00BF99CC /* PBXContainerItemProxy */;
+		};
+		OBJ_84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "sqlite-helper::sqlite-helper" /* sqlite-helper */;
+			targetProxy = 151D86D2206E9A9900BF99CC /* PBXContainerItemProxy */;
+		};
+		OBJ_86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "apollo-mapper::apollo-mapper" /* apollo-mapper */;
+			targetProxy = 151D86D3206E9A9900BF99CC /* PBXContainerItemProxy */;
+		};
+		OBJ_88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SQLite.swift::SQLite" /* SQLite */;
+			targetProxy = 151D86D4206E9A9900BF99CC /* PBXContainerItemProxy */;
+		};
+		OBJ_99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "apollo-mapper::apollo-mapper" /* apollo-mapper */;
+			targetProxy = 151D86D0206E9A9900BF99CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_102 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/apollo_mapper_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "apollo-mapper";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = "apollo-mapper";
+			};
+			name = Debug;
+		};
+		OBJ_103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/apollo_mapper_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "apollo-mapper";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = "apollo-mapper";
+			};
+			name = Release;
+		};
+		OBJ_112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CSQLite.git--7198369828177818605",
+				);
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/SQLite_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SQLite;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SQLite;
+			};
+			name = Debug;
+		};
+		OBJ_113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CSQLite.git--7198369828177818605",
+				);
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/SQLite_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SQLite;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SQLite;
+			};
+			name = Release;
+		};
+		OBJ_138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CSQLite.git--7198369828177818605",
+				);
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/sqlite_helperTests_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = "sqlite-helperTests";
+			};
+			name = Debug;
+		};
+		OBJ_76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CSQLite.git--7198369828177818605",
+				);
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/sqlite_helperTests_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = "sqlite-helperTests";
+			};
+			name = Release;
+		};
+		OBJ_91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CSQLite.git--7198369828177818605",
+				);
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/sqlite_helper_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "sqlite-helper";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = "sqlite-helper";
+			};
+			name = Debug;
+		};
+		OBJ_92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/CSQLite.git--7198369828177818605",
+				);
+				INFOPLIST_FILE = "sqlite-helper.xcodeproj/sqlite_helper_Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "sqlite-helper";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = "sqlite-helper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_101 /* Build configuration list for PBXNativeTarget "apollo-mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_102 /* Debug */,
+				OBJ_103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_111 /* Build configuration list for PBXNativeTarget "SQLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_112 /* Debug */,
+				OBJ_113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_137 /* Build configuration list for PBXAggregateTarget "sqlite-helperPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_138 /* Debug */,
+				OBJ_139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "sqlite-helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_56 /* Build configuration list for PBXNativeTarget "sqlite-helperPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_57 /* Debug */,
+				OBJ_58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_62 /* Build configuration list for PBXNativeTarget "apollo-mapperPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_63 /* Debug */,
+				OBJ_64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_68 /* Build configuration list for PBXNativeTarget "SQLite.swiftPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_69 /* Debug */,
+				OBJ_70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_74 /* Build configuration list for PBXNativeTarget "sqlite-helperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_75 /* Debug */,
+				OBJ_76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_90 /* Build configuration list for PBXNativeTarget "sqlite-helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_91 /* Debug */,
+				OBJ_92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

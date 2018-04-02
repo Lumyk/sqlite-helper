@@ -1,0 +1,19 @@
+#!/bin/sh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+echo "Hello from ${YELLOW}Lumyk${NC} 🤖"
+
+if [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "?" ] ; then
+  echo "${RED}Get only one argument${NC}"
+  echo "${GREEN}update or u${NC} — run package update"
+  echo "${GREEN}gen or g${NC} — generate project file"
+elif [ "$1" = "update" ] || [ "$1" = "u" ] ; then
+  echo "${GREEN}Package update${NC}"
+  swift package update
+elif [ "$1" = "gen" ] || [ "$1" = "g" ] ; then
+  echo "${GREEN}Generate project file${NC}"
+  swift package generate-xcodeproj
+fi

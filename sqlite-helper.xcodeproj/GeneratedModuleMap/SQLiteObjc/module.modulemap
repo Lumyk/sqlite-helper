@@ -1,0 +1,4 @@
+module SQLiteObjc {
+    umbrella "/Users/lumyk/ios/sqlite-helper/.build/checkouts/SQLite.swift.git-8114070988165065241/Sources/SQLiteObjc/include"
+    export *
+}
