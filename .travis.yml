@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode9
-before_script: ./pkg u
+before_script: swift package update
 script: xcodebuild test -scheme apollo-fetcher-Package -enableCodeCoverage YES
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 06e92d68-0f62-46e2-9356-7bb3ed6edc8e
+  - bash <(curl -s https://codecov.io/bash) -t adf621f8-0bf8-4006-a715-05707f95658a
