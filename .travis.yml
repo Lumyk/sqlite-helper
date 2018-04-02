@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode9
 before_script: swift package update
-script: xcodebuild test -scheme apollo-fetcher-Package -enableCodeCoverage YES
+script: xcodebuild test -scheme sqlite-helper-Package -enableCodeCoverage YES
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t adf621f8-0bf8-4006-a715-05707f95658a
