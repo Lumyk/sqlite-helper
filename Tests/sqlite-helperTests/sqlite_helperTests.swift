@@ -122,7 +122,7 @@ class sqlite_helperTests: XCTestCase {
     func testStorege() {
         let connection = self.createConnectionAndTable()
         
-        let storage = Storege(connection: connection, types: Machine.self)
+        let storage = Storege(connection: connection, types: [Machine.self])
         let mapper = Mapper(snapshot: ["id" : "3", "registration_number" : "23233", "name" : "My Car", "machine_group_id" : nil])
         do {
             try storage.save(object: try Machine(mapper: mapper))
