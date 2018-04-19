@@ -12,6 +12,16 @@ import apollo_mapper
 
 public class Storege: MapperStorage {
     
+    public func transactionSplitter() -> MapperStorageTransactionSplitter {
+        return self.splitter
+    }
+    
+    public func transaction(_ block: () throws -> Void) throws {
+        try self.connection.transaction {
+            try block()
+        }
+    }
+    
     public func save<T: Mappable>(object: Mapper, objectType: T.Type) throws {
         for Type in self.types {
             if objectType == Type {
@@ -31,17 +41,28 @@ public class Storege: MapperStorage {
         }
         throw MappingError.notRegistered
     }
-
-    let connection: Connection
-    let types: [Storable.Type]
     
-    public init(connection: Connection, types: [Storable.Type]) {
-        self.connection = connection
-        self.types = types
+    public func select<T: Storable>(_ type: T.Type, query: SchemaType?) throws -> [T] {
+        return try T.select(connection: self.connection, query: query)
     }
     
-    public init(connection: Connection, types: Storable.Type...) {
+    public func last<T: Storable>(_ type: T.Type, column: Expressible) throws -> T? {
+        return try self.select(type, query: T.table.order(column).limit(1)).first
+    }
+    
+    public let connection: Connection
+    let types: [Storable.Type]
+    let splitter: MapperStorageTransactionSplitter
+    
+    public init(connection: Connection, types: [Storable.Type], splitter: MapperStorageTransactionSplitter = .one) {
         self.connection = connection
         self.types = types
+        self.splitter = splitter
+    }
+    
+    public init(connection: Connection, types: Storable.Type..., splitter: MapperStorageTransactionSplitter = .one) {
+        self.connection = connection
+        self.types = types
+        self.splitter = splitter
     }
 }
