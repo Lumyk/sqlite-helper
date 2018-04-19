@@ -43,6 +43,9 @@ public class Storege: MapperStorage {
     }
     
     public func select<T: Storable>(_ type: T.Type, query: SchemaType?) throws -> [T] {
+        guard (self.types.contains { $0 == type }) else {
+            throw MappingError.notRegistered
+        }
         return try T.select(connection: self.connection, query: query)
     }
     

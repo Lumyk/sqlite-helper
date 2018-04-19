@@ -87,7 +87,7 @@ class MachineBroken: Storable {
     }
     
     required init(row: Row) throws {
-        throw MappingError.mappingError
+        throw MappingError.differentTypes
     }
     
     static func tableBuilder(tableBuilder: TableBuilder) {
@@ -99,6 +99,6 @@ class MachineBroken: Storable {
     }
     
     static func insertMapper(mapper: Mapper) throws -> [Setter] {
-        throw MappingError.mappingError
+        throw MappingError.differentTypes
     }
 }

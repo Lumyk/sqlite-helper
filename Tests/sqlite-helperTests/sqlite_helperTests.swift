@@ -159,6 +159,53 @@ class sqlite_helperTests: XCTestCase {
         }
     }
     
+    func testTransactions() {
+        let data = self.createConnectionAndTableAndInsert()
+        let connection = data.connection
+        let storage = Storege(connection: connection, types: MachineBroken.self, splitter: .split(by: 23))
+        switch storage.transactionSplitter() {
+        case .split(by: 23):
+            XCTAssert(true)
+        default:
+            XCTFail("testTransactions error 1")
+        }
+        
+        do {
+            try storage.transaction {
+                throw MappingError.optional
+            }
+            XCTFail("testTransactions error 2")
+        } catch let error as MappingError {
+            switch error {
+            case .optional:
+                XCTAssert(true)
+            default:
+                XCTFail("testTransactions error 3")
+            }
+        } catch {
+            XCTFail("testTransactions error 4")
+        }
+    }
+    
+    func testLast() {
+        let data = self.createConnectionAndTableAndInsert()
+        let connection = data.connection
+        let storage = Storege(connection: connection, types: Machine.self)
+        do {
+            _ = try storage.last(Machine.self, column: Machine.registrationNumber)
+            XCTAssert(true)
+        } catch let error {
+            XCTFail("testLast error 1 \(error)")
+        }
+        
+        do {
+            _ = try storage.last(MachineBroken.self, column: Machine.registrationNumber)
+            XCTFail("testLast error 2")
+        } catch {
+            XCTAssert(true)
+        }
+    }
+    
     static var allTests = [
         ("testEncodeDecode", testEncodeDecode),
         ("testTable", testTable),
