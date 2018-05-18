@@ -40,6 +40,10 @@ public extension Storable {
         return Table(name)
     }
     
+    public static var config: StorableConfig {
+        return StorableConfig(type: Self.self)
+    }
+    
     public static func create(connection: Connection, ifNotExists: Bool = false) throws {
         try connection.run(self.table.create( ifNotExists: ifNotExists) { t in
             Self.tableBuilder(tableBuilder: t)
@@ -56,6 +60,10 @@ public extension Storable {
         let mapper = try Self.insertMapper(mapper: mapper)
         let query = replace ? self.table.insert(or: .replace, mapper) : table.insert(mapper)
         try connection.run(query)
+    }
+    
+    public static func clearTable(connection: Connection) throws {
+        try connection.run(self.table.delete())
     }
     
     public func update(connection: Connection) throws {

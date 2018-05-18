@@ -162,8 +162,8 @@ class sqlite_helperTests: XCTestCase {
     func testTransactions() {
         let data = self.createConnectionAndTableAndInsert()
         let connection = data.connection
-        let storage = Storege(connection: connection, types: MachineBroken.self, splitter: .split(by: 23))
-        switch storage.transactionSplitter() {
+        let storage = Storege(connection: connection, configurations: StorableConfig(type:  MachineBroken.self, transactionSplitter: .split(by: 23)))
+        switch storage.configurations.first!.transactionSplitter {
         case .split(by: 23):
             XCTAssert(true)
         default:
@@ -206,6 +206,66 @@ class sqlite_helperTests: XCTestCase {
         }
     }
     
+    func testConfig() {
+        let config = Machine.config
+        XCTAssert(config.type == Machine.self && config.clearBeforeSave == false && config.replaceIfExist == true, "testConfig error")
+    }
+    
+    func testClearTable() {
+        let data = createConnectionAndTableAndInsert()
+        let snapshot = ["id" : "2", "registration_number" : "23233", "name" : "My Car", "machine_group_id" : nil]
+        let storage = Storege(connection: data.connection, configurations: [StorableConfig(type: Machine.self, clearBeforeSave: true)])
+        
+        do {
+            try Mapper.mapToStorage(Machine.self, snapshots: [snapshot], storage: storage)
+            let count = try Machine.select(connection: data.connection).count
+            if count == 1 {
+                XCTAssert(true)
+            } else {
+                XCTFail("testClearTable error 1 count - \(count)")
+            }
+        } catch {
+            XCTFail("testClearTable error 2")
+        }
+    }
+    
+    func testStorageGetConfig() {
+        let connection = self.createConnectionAndTable()
+        let snapshot = ["id" : "2", "registration_number" : "23233", "name" : "My Car", "machine_group_id" : nil]
+        let storage = Storege(connection: connection, configurations: [StorableConfig(type: MachineBroken.self, clearBeforeSave: true)])
+        
+        do {
+            try Mapper.mapToStorage(Machine.self, snapshots: [snapshot], storage: storage)
+            XCTFail("testStorageGetConfig error 1")
+
+        } catch {
+            XCTAssert(true)
+        }
+        
+        switch storage.transactionSplitter(for: MachineBroken.self) {
+        case .one:
+            XCTAssert(true)
+        default:
+            XCTFail("testStorageGetConfig error 2")
+        }
+        
+        let storageBroken = Storege(connection: connection, configurations: [])
+        switch storageBroken.transactionSplitter(for: MachineBroken.self) {
+        case .one:
+            XCTAssert(true)
+        default:
+            XCTFail("testStorageGetConfig error 3")
+        }
+        
+        do {
+            try storageBroken.save(object: Mapper(snapshot: snapshot), objectType: MachineBroken.self)
+            XCTFail("testStorageGetConfig error 4")
+            
+        } catch {
+            XCTAssert(true)
+        }
+    }
+
     static var allTests = [
         ("testEncodeDecode", testEncodeDecode),
         ("testTable", testTable),
@@ -218,5 +278,10 @@ class sqlite_helperTests: XCTestCase {
         ("testSavableMap", testSavableMap),
         ("testStorege", testStorege),
         ("testStoregeError", testStoregeError),
+        ("testTransactions", testTransactions),
+        ("testLast", testLast),
+        ("testConfig", testConfig),
+        ("testClearTable", testClearTable),
+        ("testStorageGetConfig", testStorageGetConfig),
     ]
 }

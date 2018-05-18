@@ -80,7 +80,11 @@ class Machine: Savable {
 }
 
 
-class MachineBroken: Storable {
+class MachineBroken: Savable {
+    
+    required init(mapper: Mapper) throws {
+        
+    }
     
     init() {
         

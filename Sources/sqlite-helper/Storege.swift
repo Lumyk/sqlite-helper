@@ -10,40 +10,10 @@ import Foundation
 import SQLite
 import apollo_mapper
 
-public class Storege: MapperStorage {
-    
-    public func transactionSplitter() -> MapperStorageTransactionSplitter {
-        return self.splitter
-    }
-    
-    public func transaction(_ block: () throws -> Void) throws {
-        try self.connection.transaction {
-            try block()
-        }
-    }
-    
-    public func save<T: Mappable>(object: Mapper, objectType: T.Type) throws {
-        for Type in self.types {
-            if objectType == Type {
-                try Type.insert(connection: self.connection, mapper: object, replace: true)
-                return
-            }
-        }
-        throw MappingError.notRegistered
-    }
-    
-    public func save<T: Mappable>(object: T) throws {
-        for Type in self.types where type(of: object) == Type {
-            if let object = object as? Storable {
-                try Type.insert(connection: self.connection, object: object, replace: true)
-                return
-            }
-        }
-        throw MappingError.notRegistered
-    }
+public class Storege {
     
     public func select<T: Storable>(_ type: T.Type, query: SchemaType?) throws -> [T] {
-        guard (self.types.contains { $0 == type }) else {
+        guard (self.configurations.contains { $0.type == type }) else {
             throw MappingError.notRegistered
         }
         return try T.select(connection: self.connection, query: query)
@@ -53,19 +23,69 @@ public class Storege: MapperStorage {
         return try self.select(type, query: T.table.order(column).limit(1)).first
     }
     
-    public let connection: Connection
-    let types: [Storable.Type]
-    let splitter: MapperStorageTransactionSplitter
-    
-    public init(connection: Connection, types: [Storable.Type], splitter: MapperStorageTransactionSplitter = .one) {
-        self.connection = connection
-        self.types = types
-        self.splitter = splitter
+    private func getConfig<T: Mappable>(type: T.Type) throws -> StorableConfig {
+        for config in self.configurations where type == config.type {
+            return config
+        }
+        throw MappingError.notRegistered
     }
     
-    public init(connection: Connection, types: Storable.Type..., splitter: MapperStorageTransactionSplitter = .one) {
+    public let connection: Connection
+    public let configurations: [StorableConfig]
+    
+    public init(connection: Connection, configurations: [StorableConfig]) {
         self.connection = connection
-        self.types = types
-        self.splitter = splitter
+        self.configurations = configurations
+    }
+    
+    public convenience init(connection: Connection, configurations: StorableConfig...) {
+        self.init(connection: connection, configurations: configurations)
+    }
+    
+    /// init with default 'StorableConfig' parameters
+    public convenience init(connection: Connection, types: Storable.Type...) {
+        self.init(connection: connection, types: types)
+    }
+    
+    /// init with default 'StorableConfig' parameters
+    public init(connection: Connection, types: [Storable.Type]) {
+        self.connection = connection
+        self.configurations = types.map({ StorableConfig(type: $0) })
+    }
+}
+
+extension Storege: MapperStorage {
+    
+    public func transactionSplitter<T>(for objectType: T.Type) -> MapperStorageTransactionSplitter where T : Mappable {
+        guard let config = try? self.getConfig(type: objectType) else { return .one }
+        return config.transactionSplitter
+    }
+    
+    public func transaction(_ block: () throws -> Void) throws {
+        try self.connection.transaction {
+            try block()
+        }
+    }
+    
+    public func save<T>(object: Mapper, objectType: T.Type) throws where T : Mappable {
+        for config in self.configurations where objectType == config.type {
+            try config.type.insert(connection: self.connection, mapper: object, replace: config.replaceIfExist)
+            return
+        }
+        throw MappingError.notRegistered
+    }
+    
+    public func save<T>(object: T) throws where T : Mappable {
+        let config = try self.getConfig(type: type(of: object))
+        if let object = object as? Storable {
+            try config.type.insert(connection: self.connection, object: object, replace: config.replaceIfExist)
+        }
+    }
+    
+    public func clearTable<T>(for objectType: T.Type) throws where T : Mappable {
+        let config = try self.getConfig(type: objectType)
+        if config.clearBeforeSave {
+            try config.type.clearTable(connection: self.connection)
+        }
     }
 }

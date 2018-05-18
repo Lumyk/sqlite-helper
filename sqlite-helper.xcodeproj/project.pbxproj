@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1561A60620AF216B0007B0F7 /* StorableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561A60420AF21470007B0F7 /* StorableConfig.swift */; };
 		OBJ_105 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Package.swift */; };
 		OBJ_111 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Storable.swift */; };
 		OBJ_112 /* Storege.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Storege.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1561A60420AF21470007B0F7 /* StorableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableConfig.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Storege.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storege.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
 		OBJ_14 /* sqlite_helperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqlite_helperTests.swift; sourceTree = "<group>"; };
@@ -294,7 +296,7 @@
 			path = Typed;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -303,7 +305,6 @@
 				OBJ_15 /* Dependencies */,
 				OBJ_51 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_51 /* Products */ = {
@@ -330,6 +331,7 @@
 			children = (
 				OBJ_9 /* Storable.swift */,
 				OBJ_10 /* Storege.swift */,
+				1561A60420AF21470007B0F7 /* StorableConfig.swift */,
 			);
 			name = "sqlite-helper";
 			path = "Sources/sqlite-helper";
@@ -464,7 +466,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -495,6 +497,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_111 /* Storable.swift in Sources */,
+				1561A60620AF216B0007B0F7 /* StorableConfig.swift in Sources */,
 				OBJ_112 /* Storege.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
