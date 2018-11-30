@@ -20,12 +20,23 @@ class sqlite_helperTests: XCTestCase {
     }
     
     func testEncodeDecode() {
-        let data = try? Machine.encode(["value" : "10"])
-        let decoded : [String : String]? = try! Machine.decode(data: data)
+        let data = try? Machine.encodeToJSON(["value" : "10"])
+        let decoded : [String : String]? = try! Machine.decodeFromJSON(data: data)
         XCTAssertEqual(decoded!, ["value" : "10"])
         
-        let decoded1 : String? = try! Machine.decode(data: nil)
+        let decoded1 : String? = try! Machine.decodeFromJSON(data: nil)
         XCTAssertEqual(decoded1, nil)
+    }
+    
+    func testEncodeDecode2() {
+        let data = Machine.encode(["value" : "10"])
+        let decoded : [String : String]? = Machine.decode(data: data)
+        XCTAssertEqual(decoded!, ["value" : "10"])
+        
+        let decoded1 : String? = Machine.decode(data: nil)
+        XCTAssertEqual(decoded1, nil)
+        XCTAssertEqual(Machine.encode(nil), nil)
+
     }
     
     func testTable() {
@@ -226,6 +237,68 @@ class sqlite_helperTests: XCTestCase {
             }
         } catch {
             XCTFail("testClearTable error 2")
+        }
+    }
+    
+    func testClearIds() {
+        let data = createConnectionAndTableAndInsert()
+        let storage = Storege(connection: data.connection, configurations: StorableConfig(type: Machine.self))
+        
+        do {
+            try! storage.clearEmptyId(for: Machine.self, ids: [0])
+            let count = try Machine.select(connection: data.connection).count
+            if count == 0 {
+                XCTAssert(true)
+            } else {
+                XCTFail("testClearIds error count - \(count)")
+            }
+        } catch {
+            XCTFail("testClearIds error 2")
+        }
+    }
+    
+    func testDelete1() {
+        let data = createConnectionAndTableAndInsert()
+        do {
+            let d = try Machine.delete(connection: data.connection, query: Machine.table)
+            let count = try Machine.select(connection: data.connection).count
+            if count == 0, d == 1 {
+                XCTAssert(true)
+            } else {
+                XCTFail("testDelete2 error count - \(count)")
+            }
+        } catch {
+            XCTFail("testDelete2 error 2")
+        }
+    }
+    
+    func testDelete2() {
+        let data = createConnectionAndTableAndInsert()
+        do {
+            try Machine.delete(connection: data.connection, filter: Machine.id == 1)
+            let count = try Machine.select(connection: data.connection).count
+            if count == 0 {
+                XCTAssert(true)
+            } else {
+                XCTFail("testDelete2 error count - \(count)")
+            }
+        } catch {
+            XCTFail("testDelete2 error 2")
+        }
+    }
+    
+    func testDelete3() {
+        let data = createConnectionAndTableAndInsert()
+        do {
+            try Machine.delete(connection: data.connection, filter: Machine.name == nil)
+            let count = try Machine.select(connection: data.connection).count
+            if count == 1 {
+                XCTAssert(true)
+            } else {
+                XCTFail("testDelete2 error count - \(count)")
+            }
+        } catch {
+            XCTFail("testDelete2 error 2")
         }
     }
     

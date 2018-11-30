@@ -56,6 +56,11 @@ public class Storege {
 
 extension Storege: MapperStorage {
     
+    public func storeOnly<T>(for objectType: T.Type) -> Bool where T : Mappable {
+        guard let config = try? self.getConfig(type: objectType) else { return false }
+        return config.storeOnly
+    }
+    
     public func transactionSplitter<T>(for objectType: T.Type) -> MapperStorageTransactionSplitter where T : Mappable {
         guard let config = try? self.getConfig(type: objectType) else { return .one }
         return config.transactionSplitter
@@ -86,6 +91,14 @@ extension Storege: MapperStorage {
         let config = try self.getConfig(type: objectType)
         if config.clearBeforeSave {
             try config.type.clearTable(connection: self.connection)
+            config.clearBeforeSave = false
+        }
+    }
+    
+    public func clearEmptyId<T>(for objectType: T.Type, ids: [Int]) throws where T : Mappable {
+        let config = try self.getConfig(type: objectType)
+        if ids.count != 0 {
+            try config.type.delete(connection: self.connection, filter: !ids.contains(Expression<Int>("id")))
         }
     }
 }

@@ -14,37 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "apollo-mapper::apollo-mapper"
-               BuildableName = "apollo_mapper.framework"
-               BlueprintName = "apollo-mapper"
-               ReferencedContainer = "container:sqlite-helper.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "sqlite-helper::sqlite-helper"
                BuildableName = "sqlite_helper.framework"
                BlueprintName = "sqlite-helper"
-               ReferencedContainer = "container:sqlite-helper.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SQLite.swift::SQLite"
-               BuildableName = "SQLite.framework"
-               BlueprintName = "SQLite"
                ReferencedContainer = "container:sqlite-helper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,7 +27,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "sqlite-helper::sqlite-helper"
+            BuildableName = "sqlite_helper.framework"
+            BlueprintName = "sqlite-helper"
+            ReferencedContainer = "container:sqlite-helper.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -84,9 +66,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "apollo-mapper::apollo-mapper"
-            BuildableName = "apollo_mapper.framework"
-            BlueprintName = "apollo-mapper"
+            BlueprintIdentifier = "sqlite-helper::sqlite-helper"
+            BuildableName = "sqlite_helper.framework"
+            BlueprintName = "sqlite-helper"
             ReferencedContainer = "container:sqlite-helper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -22,11 +22,25 @@ public protocol Storable {
 
 public extension Storable {
     
-    public static func encode<T: Encodable>(_ any: T?) throws -> Data {
+    public static func encode(_ any: Any?) -> Data? {
+        guard let any = any else {
+            return nil
+        }
+        return NSKeyedArchiver.archivedData(withRootObject: any)
+    }
+    
+    public static func decode<T>(data: Data?) -> T? {
+        if let data = data, let decoded = NSKeyedUnarchiver.unarchiveObject(with: data) as? T {
+            return decoded
+        }
+        return nil
+    }
+    
+    public static func encodeToJSON<T: Encodable>(_ any: T?) throws -> Data {
         return try JSONEncoder().encode(any)
     }
     
-    public static func decode<T: Decodable>(data: Data?) throws -> T? {
+    public static func decodeFromJSON<T: Decodable>(data: Data?) throws -> T? {
         if let data = data {
             return try? JSONDecoder().decode(T.self, from: data)
         }
@@ -66,6 +80,20 @@ public extension Storable {
         try connection.run(self.table.delete())
     }
     
+    public static func delete(connection: Connection, filter: Expression<Bool?>) throws {
+        let filter = self.table.filter(filter).delete()
+        try connection.run(filter)
+    }
+    
+    public static func delete(connection: Connection, filter: Expression<Bool>) throws {
+        let filter = self.table.filter(filter).delete()
+        try connection.run(filter)
+    }
+    
+    public static func delete(connection: Connection, query: SchemaType) throws -> Int {
+        return try connection.run(query.delete())
+    }
+    
     public func update(connection: Connection) throws {
         let setters = self.updateMapper()
         let query = Self.table.update(setters)
@@ -95,6 +123,6 @@ public extension Storable {
 public extension Storable where Self: Mappable {
     static func map(connection: Connection, snapshots: [[String : Any?]?]) throws -> [Self] {
         let storage = Storege(connection: connection, types: Self.self)
-        return try Mapper.map(Self.self, snapshots: snapshots, storage: storage)
+        return try Mapper.map(Self.self, snapshots: snapshots, storage: storage, element: nil)
     }
 }

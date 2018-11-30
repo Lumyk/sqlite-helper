@@ -1,6 +1,7 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode10
 before_script: swift package update
-script: xcodebuild test -scheme sqlite-helper-Package -enableCodeCoverage YES
+script:
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -scheme sqlite-helper-Package ONLY_ACTIVE_ARCH=NO | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t adf621f8-0bf8-4006-a715-05707f95658a
