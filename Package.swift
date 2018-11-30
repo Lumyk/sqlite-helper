@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:4.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -12,7 +12,7 @@ let package = Package(
             targets: ["sqlite-helper"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SwiftAndroidDev/SQLite.swift.git", from: "0.11.4"),
+        .package(url: "https://github.com/stephencelis/SQLite.swift.git", from: "0.11.5"),
         .package(url: "https://github.com/lumyk/apollo-mapper.git", .exact("0.0.7")),
     ],
     targets: [
