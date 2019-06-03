@@ -338,6 +338,16 @@ class sqlite_helperTests: XCTestCase {
             XCTAssert(true)
         }
     }
+    
+    func testSelect() {
+        let connection = self.createConnectionAndTableAndInsert()
+        do {
+            let machines = try Machine.select(connection: connection.connection, filter: Machine.id < 10)
+            XCTAssertEqual(machines.count, 1)
+        } catch let error {
+            XCTFail("\(#function) - \(error)")
+        }
+    }
 
     static var allTests = [
         ("testEncodeDecode", testEncodeDecode),
@@ -356,5 +366,6 @@ class sqlite_helperTests: XCTestCase {
         ("testConfig", testConfig),
         ("testClearTable", testClearTable),
         ("testStorageGetConfig", testStorageGetConfig),
+        ("testSelect", testSelect)
     ]
 }
