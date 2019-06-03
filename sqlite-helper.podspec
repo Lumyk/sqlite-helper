@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
 
   s.source_files  = "Sources/**/*"
 
-  s.dependency "SQLite.swift", "0.11.5"
+  s.dependency "SQLite.swift", "0.12.0"
 
 end

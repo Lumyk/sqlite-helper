@@ -12,7 +12,7 @@ let package = Package(
             targets: ["sqlite-helper"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Lumyk/SQLite.swift.git", from: "0.11.6"),
+        .package(url: "https://github.com/lumyk/SQLite.swift.git", from: "0.12.0"),
         .package(url: "https://github.com/lumyk/apollo-mapper.git", .exact("0.0.7")),
     ],
     targets: [
