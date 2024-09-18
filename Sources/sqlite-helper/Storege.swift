@@ -98,7 +98,7 @@ extension Storege: MapperStorage {
     public func clearEmptyId<T>(for objectType: T.Type, ids: [Int]) throws where T : Mappable {
         let config = try self.getConfig(type: objectType)
         if ids.count != 0 {
-            try config.type.delete(connection: self.connection, filter: !ids.contains(Expression<Int>("id")))
+            try config.type.delete(connection: self.connection, filter: !ids.contains(SQLite.Expression<Int>("id")))
         }
     }
 }

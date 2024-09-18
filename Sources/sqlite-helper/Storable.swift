@@ -82,12 +82,12 @@ public extension Storable {
         try connection.run(self.table.delete())
     }
     
-    static func delete(connection: Connection, filter: Expression<Bool?>) throws {
+    static func delete(connection: Connection, filter: SQLite.Expression<Bool?>) throws {
         let filter = self.table.filter(filter).delete()
         try connection.run(filter)
     }
     
-    static func delete(connection: Connection, filter: Expression<Bool>) throws {
+    static func delete(connection: Connection, filter: SQLite.Expression<Bool>) throws {
         let filter = self.table.filter(filter).delete()
         try connection.run(filter)
     }
@@ -106,12 +106,12 @@ public extension Storable {
         }
     }
     
-    static func select(connection: Connection, filter: Expression<Bool?>) throws -> [Self] {
+    static func select(connection: Connection, filter: SQLite.Expression<Bool?>) throws -> [Self] {
         let filter = self.table.filter(filter)
         return try self.select(connection: connection, query: filter)
     }
     
-    static func select(connection: Connection, filter: Expression<Bool>) throws -> [Self] {
+    static func select(connection: Connection, filter: SQLite.Expression<Bool>) throws -> [Self] {
         let filter = self.table.filter(filter)
         return try self.select(connection: connection, query: filter)
     }
